@@ -10,8 +10,8 @@ const nextConfig = {
   // Enable static export for GitHub Pages
   output: "export",
   // IMPORTANT: basePath must match the repository name for GitHub Pages project sites
-  basePath: "/portfolio_academia",
-  assetPrefix: "/portfolio_academia/",
+  basePath: "/Matthew-Adetoyese",
+  assetPrefix: "/Matthew-Adetoyese/",
   trailingSlash: true,
 }
 
