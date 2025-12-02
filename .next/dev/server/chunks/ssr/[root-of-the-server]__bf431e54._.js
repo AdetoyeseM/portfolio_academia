@@ -114,11 +114,29 @@ const metadata = {
     icons: {
         icon: [
             {
+                url: "/favicon.ico",
+                sizes: "any"
+            },
+            {
+                url: "/favicon-16x16.png",
+                sizes: "16x16",
+                type: "image/png"
+            },
+            {
+                url: "/favicon-32x32.png",
+                sizes: "32x32",
+                type: "image/png"
+            },
+            {
                 url: "/icon-light-32x32.png",
+                sizes: "32x32",
+                type: "image/png",
                 media: "(prefers-color-scheme: light)"
             },
             {
                 url: "/icon-dark-32x32.png",
+                sizes: "32x32",
+                type: "image/png",
                 media: "(prefers-color-scheme: dark)"
             },
             {
@@ -126,7 +144,13 @@ const metadata = {
                 type: "image/svg+xml"
             }
         ],
-        apple: "/apple-icon.png"
+        apple: [
+            {
+                url: "/apple-icon.png",
+                sizes: "180x180",
+                type: "image/png"
+            }
+        ]
     }
 };
 function RootLayout({ children }) {
@@ -143,17 +167,17 @@ function RootLayout({ children }) {
                 children: children
             }, void 0, false, {
                 fileName: "[project]/app/layout.tsx",
-                lineNumber: 41,
+                lineNumber: 65,
                 columnNumber: 9
             }, this)
         }, void 0, false, {
             fileName: "[project]/app/layout.tsx",
-            lineNumber: 40,
+            lineNumber: 64,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/app/layout.tsx",
-        lineNumber: 39,
+        lineNumber: 63,
         columnNumber: 5
     }, this);
 }

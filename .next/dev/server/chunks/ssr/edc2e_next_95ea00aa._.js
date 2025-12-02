@@ -576,9 +576,17 @@ const normalizePathTrailingSlash = (path)=>{
         return path;
     }
     const { pathname, query, hash } = (0, _parsepath.parsePath)(path);
-    if ("TURBOPACK compile-time falsy", 0) //TURBOPACK unreachable
+    if ("TURBOPACK compile-time truthy", 1) {
+        if (/\.[^/]+\/?$/.test(pathname)) {
+            return `${(0, _removetrailingslash.removeTrailingSlash)(pathname)}${query}${hash}`;
+        } else if (pathname.endsWith('/')) {
+            return `${pathname}${query}${hash}`;
+        } else {
+            return `${pathname}/${query}${hash}`;
+        }
+    }
+    //TURBOPACK unreachable
     ;
-    return `${(0, _removetrailingslash.removeTrailingSlash)(pathname)}${query}${hash}`;
 };
 if ((typeof exports.default === 'function' || typeof exports.default === 'object' && exports.default !== null) && typeof exports.default.__esModule === 'undefined') {
     Object.defineProperty(exports.default, '__esModule', {
@@ -5252,7 +5260,7 @@ var EntryStatus = /*#__PURE__*/ function(EntryStatus) {
     EntryStatus[EntryStatus["Rejected"] = 3] = "Rejected";
     return EntryStatus;
 }({});
-const isOutputExportMode = ("TURBOPACK compile-time value", "development") === 'production' && ("TURBOPACK compile-time value", "standalone") === 'export';
+const isOutputExportMode = ("TURBOPACK compile-time value", "development") === 'production' && ("TURBOPACK compile-time value", "export") === 'export';
 const MetadataOnlyRequestTree = [
     '',
     {},
@@ -13141,7 +13149,7 @@ const configEnv = ("TURBOPACK compile-time value", {
     "qualities": ("TURBOPACK compile-time value", [
         ("TURBOPACK compile-time value", 75)
     ]),
-    "path": ("TURBOPACK compile-time value", "/_next/image"),
+    "path": ("TURBOPACK compile-time value", "/_next/image/"),
     "loader": ("TURBOPACK compile-time value", "default"),
     "dangerouslyAllowSVG": ("TURBOPACK compile-time value", false),
     "unoptimized": ("TURBOPACK compile-time value", true),
@@ -13153,7 +13161,7 @@ const configEnv = ("TURBOPACK compile-time value", {
             "search": ("TURBOPACK compile-time value", "")
         })
     ]),
-    "output": ("TURBOPACK compile-time value", "standalone")
+    "output": ("TURBOPACK compile-time value", "export")
 });
 if ("TURBOPACK compile-time truthy", 1) {
     ;
@@ -13495,7 +13503,7 @@ function getImageProps(imgProps) {
             "qualities": ("TURBOPACK compile-time value", [
                 ("TURBOPACK compile-time value", 75)
             ]),
-            "path": ("TURBOPACK compile-time value", "/_next/image"),
+            "path": ("TURBOPACK compile-time value", "/_next/image/"),
             "loader": ("TURBOPACK compile-time value", "default"),
             "dangerouslyAllowSVG": ("TURBOPACK compile-time value", false),
             "unoptimized": ("TURBOPACK compile-time value", true),
@@ -13507,7 +13515,7 @@ function getImageProps(imgProps) {
                     "search": ("TURBOPACK compile-time value", "")
                 })
             ]),
-            "output": ("TURBOPACK compile-time value", "standalone")
+            "output": ("TURBOPACK compile-time value", "export")
         })
     });
     // Normally we don't care about undefined props because we pass to JSX,

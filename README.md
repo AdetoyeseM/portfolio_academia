@@ -26,7 +26,7 @@ A clean, minimalist academic portfolio website showcasing research in mobile com
 - **Framework** - Next.js 16
 - **Styling** - Tailwind CSS v4
 - **UI Components** - shadcn/ui
-- **Deployment** - Vercel
+- **Deployment** - GitHub Pages
 
 ## Getting Started
 
@@ -55,19 +55,16 @@ npm run start
 
 ## Deployment
 
-### Deploy to Vercel (Recommended)
+### Deploy to GitHub Pages
 
-\`\`\`bash
-npm install -g vercel
-vercel
-\`\`\`
+This project is configured for GitHub Pages deployment. See `DEPLOYMENT.md` for detailed instructions.
 
 ### Deploy to Other Platforms
 
-This is a standard Next.js app that can be deployed to any platform supporting Node.js:
+This is a standard Next.js app that can be deployed to any platform supporting static sites:
 - Netlify
-- GitHub Pages
 - Self-hosted servers
+- Any static hosting service
 
 ## Customization
 
